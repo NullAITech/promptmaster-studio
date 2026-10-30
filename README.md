@@ -17,9 +17,13 @@
 [![MCP Compliant](https://img.shields.io/badge/MCP-2024--11--05-green.svg)](https://modelcontextprotocol.io/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20external-brightgreen.svg)](https://pypi.org/project/promptmaster-studio/)
 [![Tests](https://img.shields.io/badge/tests-235%20passed-success.svg)](https://github.com/NullAITech/promptmaster-studio)
-[![Monetization: Stripe + Solana](https://img.shields.io/badge/Checkout-$19%20Founding%20Lifetime-14F195.svg)](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
+[![Access: 100% Free](https://img.shields.io/badge/Access-100%25%20Free%20%26%20Open-10b981.svg)](https://promptmaster-studio.netlify.app)
 
-*From ad-hoc prompts to production-grade prompt engineering — 100% in-browser client execution with zero cloud telemetry.*
+*From ad-hoc prompts to production-grade prompt engineering — 100% in-browser client execution with zero cloud telemetry. 100% Free & Open Access.*
+
+☕ **Support Development**:
+- **Stripe Buy Us a Coffee**: [https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
+- **Solana Tip Address**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`
 
 **Engineered by Neal Frazier Tech ([@1nc0gn30](https://github.com/1nc0gn30)) • [NullAI Platform](https://nullai.tech)**
 
@@ -152,11 +156,21 @@ python -c "import promptmaster_studio; print('⚡ PromptMaster ready!')"
 ### Example Session
 
 ```bash
-# 1. Optimize a prompt for Claude
-promptmaster optimize "Write a sorting function" --target anthropic --cot
+# Check version and JSON telemetry
+promptmaster-studio --version
+promptmaster-studio --json
 
-# 2. Lint the result
-promptmaster lint "<instructions>You are an expert. Write a sorting function.</instructions>"
+# Run static AST quality lint
+promptmaster-studio lint "Do not hallucinate and make sure you reply in json"
+
+# Optimize a prompt for Claude XML with Chain-of-Thought
+promptmaster-studio optimize "Write a sorting function" --target anthropic --cot
+
+# Launch the standalone Web Workstation on port 8123
+python3 server.py
+# or
+promptmaster-studio serve --port 8123
+```
 
 # 3. Compare two versions
 promptmaster diff "Write a sort function" "<instructions>You are an expert. Write a sort function.</instructions>" --model mistral-large-2
