@@ -1,0 +1,389 @@
+/* ==========================================================================
+   PromptMaster Studio — Precision Instrument States (wave-states.css)
+   Interactive states: :focus-visible, hover on editor controls,
+   empty & error presentations using existing selectors, and a strict
+   prefers-reduced-motion block. Extends existing design tokens.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Precision Focus-Visible Rings (:focus-visible)
+   High-contrast, dual-ring keyboard affordances preserving accessible focus.
+   -------------------------------------------------------------------------- */
+
+/* Textareas (Main Editor, Diff Panels, Version History) */
+#promptInput:focus-visible,
+#diffLeftPrompt:focus-visible,
+#diffRightPrompt:focus-visible,
+#historyPromptInput:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 1px;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px var(--primary-container) !important;
+}
+
+/* Single-line Inputs (History Label, Commit Message, Dynamic Variables) */
+#historyLabel:focus-visible,
+#historyMessage:focus-visible,
+.variable-field input:focus-visible,
+.pm-input:focus-visible,
+input[type="text"]:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 1px;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-container) !important;
+}
+
+/* Select Dropdowns (Template Selector, Diff Model, Branch Selector) */
+#templateSelector:focus-visible,
+#diffModelSelector:focus-visible,
+#historyBranchSelector:focus-visible,
+.variable-field select:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 1px;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-container) !important;
+}
+
+/* Buttons (Primary, Tonal, Icons, Mode & Output Tabs, Chips) */
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-tonal:focus-visible,
+.btn-icon:focus-visible,
+.tab-btn:focus-visible,
+.chip:focus-visible,
+.text-btn:focus-visible,
+.pm-mini-btn:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--primary-container) !important;
+}
+
+/* Output Preview & Diff Inspection Containers */
+.preview-box:focus-visible,
+#diffResultsContent:focus-visible,
+#historyCompareContent:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: -1px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Responsive Hover States on Existing Editor Controls
+   Subtle micro-elevation and border illumination using 140ms ease tokens.
+   -------------------------------------------------------------------------- */
+
+/* Primary Action Buttons */
+.btn-primary {
+  transition: background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Tonal & Utility Buttons */
+.btn-tonal {
+  transition: background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tonal:hover {
+  background-color: var(--surface-container);
+  border-color: var(--outline-variant);
+  color: var(--on-surface);
+  transform: translateY(-1px);
+}
+
+.btn-tonal:active {
+  transform: translateY(0);
+}
+
+/* Icon Buttons (Theme toggle, close, etc.) */
+.btn-icon {
+  transition: background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-icon:hover {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.btn-icon:active {
+  transform: scale(0.96);
+}
+
+/* Mode & View Tabs */
+.tab-btn {
+  transition: background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-btn:not(.active):hover {
+  background-color: var(--surface-container-low);
+  color: var(--on-surface);
+  border-color: var(--outline-light);
+}
+
+.tab-btn.active:hover {
+  border-color: var(--primary);
+}
+
+/* Filter Chips */
+.chip {
+  transition: background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chip:not(.active):hover {
+  border-color: var(--primary);
+  color: var(--on-surface);
+  background-color: var(--surface-container-low);
+}
+
+/* Select Dropdowns */
+#templateSelector,
+#diffModelSelector,
+#historyBranchSelector,
+.variable-field select {
+  transition: border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#templateSelector:hover,
+#diffModelSelector:hover,
+#historyBranchSelector:hover,
+.variable-field select:hover {
+  border-color: var(--outline);
+  background-color: var(--surface-container-low);
+}
+
+/* Textareas & Inputs Hover */
+#promptInput:hover:not(:focus),
+#diffLeftPrompt:hover:not(:focus),
+#diffRightPrompt:hover:not(:focus),
+#historyPromptInput:hover:not(:focus),
+textarea:hover:not(:focus) {
+  border-color: var(--outline);
+}
+
+#historyLabel:hover:not(:focus),
+#historyMessage:hover:not(:focus),
+.variable-field input:hover:not(:focus),
+input[type="text"]:hover:not(:focus) {
+  border-color: var(--outline);
+}
+
+/* Saved History Cards */
+#historyVersionList > div {
+  transition: border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#historyVersionList > div:hover {
+  border-color: var(--primary) !important;
+  background-color: var(--surface) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Linter Issue Items */
+.issue-item {
+  transition: border-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.14s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.issue-item:hover {
+  border-color: var(--outline-variant);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   3. Empty State Presentation (Using Existing Selectors)
+   Refined placeholders and calm technical readout frames when collections are empty.
+   -------------------------------------------------------------------------- */
+
+/* Textarea & Input Placeholders */
+textarea::placeholder,
+input::placeholder {
+  color: var(--on-surface-variant);
+  opacity: 0.65;
+  font-family: var(--font-text);
+  font-size: 0.84rem;
+}
+
+textarea:placeholder-shown,
+input:placeholder-shown {
+  border-style: solid;
+}
+
+/* Linter Zero-Issues / Empty State */
+#issuesList > div:only-child {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem !important;
+  letter-spacing: -0.01em;
+  padding: 1.125rem 0.875rem !important;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--outline-light);
+  background-color: var(--surface-dim);
+  color: var(--on-surface-variant) !important;
+  text-align: center;
+}
+
+/* Version History Empty State */
+#historyVersionList > div:only-child {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem !important;
+  letter-spacing: -0.01em;
+  padding: 1.25rem 1rem !important;
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--outline-light);
+  background-color: var(--surface-dim);
+  color: var(--on-surface-variant) !important;
+  text-align: center;
+}
+
+/* Empty containers */
+#variableFieldsContainer:empty,
+.variables-section:empty,
+#improvementsList:empty,
+#diffResultsContent:empty {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. Error & Warning Presentation (Using Existing Selectors)
+   High-legibility diagnostics using existing semantic tokens.
+   -------------------------------------------------------------------------- */
+
+/* Critical & Error Linter Issues */
+.issue-item.critical {
+  border-left: 4px solid var(--error) !important;
+  background-color: var(--error-container) !important;
+  color: var(--on-surface) !important;
+  border-top: 1px solid var(--outline-light);
+  border-right: 1px solid var(--outline-light);
+  border-bottom: 1px solid var(--outline-light);
+}
+
+.issue-item.error {
+  border-left: 4px solid var(--error) !important;
+  background-color: var(--surface-dim);
+  border-top: 1px solid var(--outline-light);
+  border-right: 1px solid var(--outline-light);
+  border-bottom: 1px solid var(--outline-light);
+}
+
+/* Warning Linter Issues */
+.issue-item.warning {
+  border-left: 4px solid var(--warning) !important;
+  background-color: var(--surface-dim);
+  border-top: 1px solid var(--outline-light);
+  border-right: 1px solid var(--outline-light);
+  border-bottom: 1px solid var(--outline-light);
+}
+
+/* Info Linter Issues */
+.issue-item.info {
+  border-left: 4px solid var(--primary) !important;
+  background-color: var(--surface-dim);
+  border-top: 1px solid var(--outline-light);
+  border-right: 1px solid var(--outline-light);
+  border-bottom: 1px solid var(--outline-light);
+}
+
+/* Issue Metadata Header */
+.issue-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Issue Actionable Suggestion */
+.issue-suggestion {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  padding-top: 0.35rem;
+  border-top: 1px dashed var(--outline-light);
+  margin-top: 0.35rem;
+  font-style: normal;
+}
+
+/* Invalid / Error Form Controls */
+textarea:invalid,
+input:invalid,
+.is-invalid,
+.has-error {
+  border-color: var(--error) !important;
+}
+
+textarea:invalid:focus,
+input:invalid:focus,
+.is-invalid:focus,
+.has-error:focus {
+  outline: 2px solid var(--error) !important;
+  box-shadow: 0 0 0 3px var(--error-container) !important;
+}
+
+/* Toast Error Presentation */
+.toast.error {
+  background-color: var(--surface-container-high) !important;
+  border: 1px solid var(--error) !important;
+  color: var(--error) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. Prefers-Reduced-Motion Block
+   Disables motion, transitions, transforms, and keyframes when requested.
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-tonal,
+  .btn-icon,
+  .tab-btn,
+  .chip,
+  .score-card,
+  .score-value,
+  .overall-badge,
+  .preview-box,
+  textarea,
+  input,
+  select,
+  .issue-item,
+  #historyVersionList > div {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

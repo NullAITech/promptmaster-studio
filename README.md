@@ -17,7 +17,7 @@
 [![MCP Compliant](https://img.shields.io/badge/MCP-2024--11--05-green.svg)](https://modelcontextprotocol.io/)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20external-brightgreen.svg)](https://pypi.org/project/promptmaster-studio/)
 [![Tests](https://img.shields.io/badge/tests-235%20passed-success.svg)](https://github.com/NullAITech/promptmaster-studio)
-[![Monetization: Stripe + Solana](https://img.shields.io/badge/Checkout-$19%20Founding%20Lifetime-14F195.svg)](https://buy.stripe.com/cNiaEWaEldKo6Tm1C0fw40D)
+[![Monetization: Stripe + Solana](https://img.shields.io/badge/Checkout-$19%20Founding%20Lifetime-14F195.svg)](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
 
 *From ad-hoc prompts to production-grade prompt engineering — 100% in-browser client execution with zero cloud telemetry.*
 
