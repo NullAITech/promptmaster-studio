@@ -32,5 +32,5 @@ window.PROMPTMASTER_CONFIG = {
     verifyEndpoint: ""
   },
 
-  supportEmail: "support@nealfrazier.tech"
+  supportEmail: "support@nullai.tech"
 };

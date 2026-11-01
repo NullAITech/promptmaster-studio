@@ -25,7 +25,7 @@
 - **Stripe Buy Us a Coffee**: [https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X](https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X)
 - **Solana Tip Address**: `GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK`
 
-**Engineered by Neal Frazier Tech ([@1nc0gn30](https://github.com/1nc0gn30)) • [NullAI Platform](https://nullai.tech)**
+**Engineered by 1nc0gn30 • NullAI ([@1nc0gn30](https://github.com/1nc0gn30)) • [NullAI Platform](https://nullai.tech)**
 
 ---
 
@@ -326,7 +326,7 @@ hero with the product reel → how it works → the live studio → pricing → 
 | `solana.rpcUrl` *(optional)* | A CORS-enabled Solana RPC (e.g. a domain-restricted Helius/QuickNode URL). Enables automatic payment detection through the Solana Pay `reference`. |
 | `license.verifyEndpoint` *(optional)* | `"/.netlify/functions/verify-checkout"` once `STRIPE_SECRET_KEY` is set in Netlify env vars. |
 | `freeTaste.fullRuns`, `freeTaste.previewLines` | Tune the free taste. |
-| `product.priceLabel` | Shown in buttons. If you change the price, also update the static `$19` copy and the JSON-LD `price` in `index.html`. |
+| `product.priceLabel` | Shown in buttons. If you change the price, also update the static `$0` copy and the JSON-LD `price` in `index.html`. |
 
 Only public values belong in `config.js`. Never commit `sk_live_…` keys, webhook secrets or wallet private keys.
 

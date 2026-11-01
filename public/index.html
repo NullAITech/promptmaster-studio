@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PromptMaster Studio: Prompt Optimizer & Linter for Claude, ChatGPT & Gemini</title>
   <meta name="description" content="Paste a rough prompt and get a production-ready one. PromptMaster Studio lints, scores and rewrites prompts for Claude, ChatGPT and Gemini in your browser. 100% Free & Open Access in your browser.">
-  <meta name="author" content="Neal Frazier">
+  <meta name="author" content="1nc0gn30">
   <meta name="theme-color" content="#07090E">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://promptmaster-studio.netlify.app/">
@@ -19,7 +19,7 @@
   <meta property="og:url" content="https://promptmaster-studio.netlify.app/">
   <meta property="og:title" content="PromptMaster Studio: rough prompt in, production prompt out">
   <meta property="og:description" content="Lint, score and rewrite AI prompts for Claude, ChatGPT and Gemini, all in your browser. 100% Free & Open Access in your browser.">
-  <meta property="og:site_name" content="PromptMaster Studio by Neal Frazier Tech">
+  <meta property="og:site_name" content="PromptMaster Studio by 1nc0gn30 • NullAI">
   <meta property="og:image" content="https://promptmaster-studio.netlify.app/assets/banner.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -42,12 +42,12 @@
       {
         "@type": "Organization",
         "@id": "https://promptmaster-studio.netlify.app/#org",
-        "name": "Neal Frazier Tech",
+        "name": "1nc0gn30 • NullAI",
         "alternateName": "NullAITech",
-        "url": "https://nealfrazier.tech",
+        "url": "https://nullai.tech",
         "logo": "https://promptmaster-studio.netlify.app/favicon.svg",
-        "email": "support@nealfrazier.tech",
-        "founder": { "@type": "Person", "name": "Neal Frazier", "url": "https://nealfrazier.tech" },
+        "email": "support@nullai.tech",
+        "founder": { "@type": "Person", "name": "1nc0gn30", "url": "https://nullai.tech" },
         "sameAs": ["https://github.com/1nc0gn30", "https://x.com/1nc0gn30", "https://nullai.tech"]
       },
       {
@@ -120,7 +120,7 @@
           {
             "@type": "Question",
             "name": "What is PromptMaster Studio?",
-            "acceptedAnswer": { "@type": "Answer", "text": "PromptMaster Studio is a browser-based prompt engineering tool by Neal Frazier Tech. It lints and scores your prompt, estimates token cost, and rewrites it into a structured format for Claude (XML), OpenAI chat, Google Gemini or chain-of-thought reasoning." }
+            "acceptedAnswer": { "@type": "Answer", "text": "PromptMaster Studio is a browser-based prompt engineering tool by 1nc0gn30 • NullAI. It lints and scores your prompt, estimates token cost, and rewrites it into a structured format for Claude (XML), OpenAI chat, Google Gemini or chain-of-thought reasoning." }
           },
           {
             "@type": "Question",
@@ -145,7 +145,7 @@
           {
             "@type": "Question",
             "name": "What is the refund policy?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Every purchase has a 30-day money-back guarantee. Email support@nealfrazier.tech with your Stripe receipt email or Solana transaction signature within 30 days for a full refund. Details are in the Terms of Service." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Every purchase has a 30-day money-back guarantee. Email support@nullai.tech with your Stripe receipt email or Solana transaction signature within 30 days for a full refund. Details are in the Terms of Service." }
           },
           {
             "@type": "Question",
@@ -1516,7 +1516,7 @@
         </div>
         <div class="taste-meter" id="tasteMeter" role="status" aria-live="polite">
           <span class="taste-icon" aria-hidden="true">✦</span>
-          <span id="tasteMeterText"><strong>Free taste:</strong> your first optimized prompt is shown in full.</span>
+          <span id="tasteMeterText"><strong>100% Open Access:</strong> Full output, copy, and export are permanently unlocked in your browser.</span>
         </div>
       </div>
 
@@ -1620,20 +1620,9 @@
         <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="setOutputView('diffs')">Improvements & Tags</button>
       </div>
 
-      <!-- Output Preview Container with Paywall Blur & Lock Overlay -->
-      <div class="preview-container paywall-wrap" id="codePaywallWrap" data-alias="codePaywallWrap">
+      <!-- Output Preview Container -->
+      <div class="preview-container" id="cosolanaTipwallWrap" data-alias="cosolanaTipwallWrap">
         <div class="preview-box" id="outputPreview">Click 'Meta-Optimize Prompt' or type in the editor to see live transformed output...</div>
-
-        <!-- Free-taste gate: covers the locked part of the output -->
-        <div id="outputPaywallOverlay" class="output-paywall-overlay paywall-overlay" data-alias="paywallOverlay" style="display: none;">
-          <div class="paywall-lock-badge">Preview: first lines shown</div>
-          <div class="paywall-lock-title">Unlock the full optimized prompt</div>
-          <div class="paywall-lock-desc">Pro shows the complete output for every target, with copy & export. <span data-price>Free (100% Open Access)</span> once · 30-day refund.</div>
-          <div class="paywall-lock-buttons">
-            <button type="button" class="cta-primary cta-sm" data-open-checkout><span>100% Free & Unlocked</span></button>
-          </div>
-          <button type="button" class="paywall-enter-key" data-open-restore>Already paid? Restore access</button>
-        </div>
       </div>
 
       <!-- Applied Improvements Box -->
@@ -1808,98 +1797,30 @@
      </div>
     </section>
 
-    <!-- PRICING -->
-    <section class="pricing" id="pricing" aria-labelledby="pricingTitle">
-      <div class="lp-wrap">
-        <div class="section-head">
-          <p class="kicker">// pricing</p>
-          <h2 class="section-title" id="pricingTitle">How much does PromptMaster Studio <em>cost?</em></h2>
-          <p class="answer">It's free to try. <strong>100% Free & Open Access (Optional Buy Us a Coffee)</strong> for lifetime access to the web studio. There's no subscription, and every purchase is covered by a 30-day money-back guarantee.</p>
-        </div>
-
-        <div class="price-layout">
-          <div class="plan-free">
-            <h3>Free</h3>
-            <div class="plan-price-sm">$0</div>
-            <p class="muted">Everything you need to find out what's wrong with a prompt.</p>
-            <ul class="check-list muted">
-              <li>Linter: negative constraints, vague directives, injection risks, broken variables</li>
-              <li>Clarity, security & structure scores</li>
-              <li>Token & cost estimator</li>
-              <li>Prompt diff and local version history</li>
-              <li>Built-in templates & curriculum</li>
-              <li>Your first optimized prompt in full; after that, a preview of each result</li>
-            </ul>
-            <a href="#studio" class="cta-link text-link" data-focus-editor>Start free in the studio →</a>
-          </div>
-
-          <article class="plan-card" aria-labelledby="proPlanTitle">
-            <div class="plan-top">
-              <h3 id="proPlanTitle">Pro · Lifetime</h3>
-              <span class="plan-badge">one-time payment</span>
-            </div>
-            <div class="plan-price"><span class="amount" data-price>Free (100% Open Access)</span><span class="term">once, yours to keep</span></div>
-            <p class="plan-sub">Everything in Free, plus the full optimizer.</p>
-            <ul class="check-list">
-              <li><div>Full optimized output for every target<span>Claude XML, OpenAI chat, Google Gemini and chain-of-thought</span></div></li>
-              <li><div>Copy & export optimized prompts<span>One click to clipboard or a .txt file</span></div></li>
-              <li><div>Unlimited optimizations<span>No daily caps and no credits</span></div></li>
-              <li><div>Commercial use of your outputs<span>Use them in client and production work, as set out in the <a href="/terms.html">Terms</a></span></div></li>
-              <li><div>Future web-studio updates included<span>No upgrade fees</span></div></li>
-            </ul>
-            <div class="plan-actions">
-              <button type="button" class="cta-primary cta-block" data-open-checkout><span>☕ Buy Us a Coffee</span> <span class="arrow" aria-hidden="true">→</span></button>
-              <button type="button" class="text-btn" data-open-restore>Already paid? Restore access</button>
-            </div>
-            <div class="plan-perf">
-              <span>Card, Apple Pay & Google Pay via Stripe<span data-if-solana hidden> · USDC on Solana</span></span>
-              <a href="/terms.html#refunds">30-day refund policy</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="faq" id="faq" aria-labelledby="faqTitle">
       <div class="lp-wrap faq-layout">
         <div class="section-head">
           <p class="kicker">// questions</p>
           <h2 class="section-title" id="faqTitle">Frequently asked <em>questions</em></h2>
-          <p class="answer">Short, straight answers. If yours isn't here, ask the <a href="/support.html" style="color:var(--emerald);text-underline-offset:3px">support desk</a> or email <a href="mailto:support@nealfrazier.tech" data-support-email style="color:var(--emerald);text-underline-offset:3px">support@nealfrazier.tech</a>.</p>
+          <p class="answer">Short, straight answers. If yours isn't here, ask the <a href="/support.html" style="color:var(--emerald);text-underline-offset:3px">support desk</a> or email <a href="mailto:support@nullai.tech" data-support-email style="color:var(--emerald);text-underline-offset:3px">support@nullai.tech</a>.</p>
         </div>
         <div class="faq-list">
           <details class="faq-item" open>
             <summary><h3>What is PromptMaster Studio?</h3></summary>
-            <div class="faq-answer"><p><strong>A browser-based prompt engineering tool by Neal Frazier Tech.</strong> It lints and scores your prompt, estimates token cost, and rewrites it into a structured format for Claude (XML), OpenAI chat, Google Gemini or chain-of-thought reasoning.</p></div>
+            <div class="faq-answer"><p><strong>A browser-based prompt engineering tool by 1nc0gn30 • NullAI.</strong> It lints and scores your prompt, estimates token cost, and rewrites it into a structured format for Claude (XML), OpenAI chat, Google Gemini or chain-of-thought reasoning.</p></div>
           </details>
           <details class="faq-item">
             <summary><h3>Are my prompts sent to a server?</h3></summary>
             <div class="faq-answer"><p><strong>No.</strong> Linting, scoring and rewriting run in JavaScript inside your browser, and your prompt text is never uploaded. Payments are handled by Stripe or by your own Solana wallet. See the <a href="/privacy.html">Privacy Policy</a>.</p></div>
           </details>
           <details class="faq-item">
-            <summary><h3>What can I do for free?</h3></summary>
-            <div class="faq-answer"><p><strong>Almost everything except the full optimizer output.</strong> The linter, quality scores, token and cost estimator, prompt diff, version history, templates and curriculum are free and unlimited. Your first optimized prompt is shown in full. After that, each optimized result shows a preview of its first lines.</p></div>
+            <summary><h3>Is PromptMaster Studio 100% Free &amp; Open Access?</h3></summary>
+            <div class="faq-answer"><p><strong>Yes.</strong> Every feature—including the full multi-architecture optimizer (Claude XML, OpenAI Chat, Google Gemini, CoT Reasoning), static linter, token cost estimator, prompt diff engine, version history, templates, and curriculum—is 100% free and unlocked by default with zero paywalls.</p></div>
           </details>
           <details class="faq-item">
-            <summary><h3>What does PromptMaster Studio unlock?</h3></summary>
-            <div class="faq-answer"><p><strong>The complete optimizer.</strong> You get the full optimized output for all four targets (Claude XML, OpenAI, Gemini, chain-of-thought), copy and export, and unlimited optimizations in the browser you unlocked.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary><h3>How much does Pro cost? Is it a subscription?</h3></summary>
-            <div class="faq-answer"><p><strong><span data-price>Free (100% Open Access)</span>, once.</strong> It's a single payment for lifetime access to the web studio, with no subscription and no recurring charge.</p></div>
-          </details>
-          <details class="faq-item" id="refunds">
-            <summary><h3>What is the refund policy?</h3></summary>
-            <div class="faq-answer"><p><strong>Full refund within 30 days, no questions asked.</strong> Email <a href="mailto:support@nealfrazier.tech" data-support-email>support@nealfrazier.tech</a> with your Stripe receipt email or Solana transaction signature. The full policy is in the <a href="/terms.html#refunds">Terms of Service</a>, and you can also open a ticket at the <a href="/support.html">support desk</a>.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary><h3>Can I pay with crypto?</h3></summary>
-            <div class="faq-answer"><p data-if-solana hidden><strong>Yes: USDC on Solana.</strong> In checkout, choose "Pay with Solana" and scan the Solana Pay QR code with Phantom, Solflare or another compatible wallet, or open it directly in a wallet on your phone. Card, Apple Pay and Google Pay go through Stripe.</p><p data-if-no-solana><strong>Not at the moment.</strong> Checkout currently takes card, Apple Pay and Google Pay through Stripe.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary><h3>How do I use Pro on another browser or device?</h3></summary>
-            <div class="faq-answer"><p><strong>Use your restore link.</strong> Pro is remembered in the browser you paid in. After checkout you'll see a restore link you can open on any other browser. You can also choose <button type="button" class="text-btn" data-open-restore>Restore access</button> and paste your Stripe checkout session ID or Solana transaction signature. If you lose both, email support with your receipt.</p></div>
+            <summary><h3>How can I support development?</h3></summary>
+            <div class="faq-answer"><p><strong>Voluntary tips via Buy Us a Coffee or Solana.</strong> You can support ongoing open-access development via our <a href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X" target="_blank" rel="noopener noreferrer">Stripe Buy Us a Coffee link</a> or by tipping Solana to <code>GG2eQbVh8ut1BK6j1A2tz7pSySdLpD38BgyEhGcxdXoK</code>.</p></div>
           </details>
         </div>
       </div>
@@ -1909,10 +1830,10 @@
     <section class="final-cta" aria-labelledby="finalTitle">
       <div class="lp-wrap">
         <h2 class="section-title" id="finalTitle">Ship prompts that <em>hold up</em> in production.</h2>
-        <p class="answer">Try the free linter and your first full optimization now. Upgrade only if it earns its place in your workflow.</p>
+        <p class="answer">Use the 100% open-access linter, multi-target optimizer, diff engine, and version history directly in your browser or via the ZothOS CLI.</p>
         <div class="hero-actions">
           <a href="#studio" class="cta-primary" data-focus-editor>Optimize a prompt free <span class="arrow" aria-hidden="true">→</span></a>
-          <button type="button" class="cta-link" style="background:none;border-top:0;border-left:0;border-right:0;cursor:pointer" data-open-checkout>☕ Support via Buy Us a Coffee — <span data-price>Free (100% Open Access)</span></button>
+          <a href="https://buy.stripe.com/3cIfZg27PdKo2D64Ocfw40X" target="_blank" rel="noopener noreferrer" class="cta-link" style="text-decoration:none">☕ Buy Us a Coffee</a>
         </div>
       </div>
     </section>
@@ -1922,7 +1843,7 @@
   <footer class="site-footer">
     <div class="lp-wrap footer-inner">
       <div>
-        <strong>PromptMaster Studio</strong> · by Neal Frazier Tech (<a class="brand-link" href="https://github.com/1nc0gn30" target="_blank" rel="noopener">@1nc0gn30</a>) · <a class="brand-link" href="https://nullai.tech" target="_blank" rel="noopener">NullAI</a>
+        <strong>PromptMaster Studio</strong> · by 1nc0gn30 • NullAI (<a class="brand-link" href="https://github.com/1nc0gn30" target="_blank" rel="noopener">@1nc0gn30</a>) · <a class="brand-link" href="https://nullai.tech" target="_blank" rel="noopener">NullAI</a>
       </div>
       <nav class="footer-links" aria-label="Footer">
         <a href="/terms.html">Terms of Service</a>
@@ -1930,7 +1851,7 @@
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/support.html">Support</a>
         <a href="https://github.com/1nc0gn30/promptmaster-studio" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://nealfrazier.tech" target="_blank" rel="noopener">Neal Frazier Tech</a>
+        <a href="https://nullai.tech" target="_blank" rel="noopener">1nc0gn30 • NullAI</a>
       </nav>
     </div>
   </footer>
@@ -1983,7 +1904,7 @@
     const CFG_TASTE = Object.assign({ fullRuns: 1, previewLines: 6 }, PM_CFG.freeTaste || {});
     const CFG_LICENSE = PM_CFG.license || {};
     const PRICE_LABEL = (PM_CFG.product && PM_CFG.product.priceLabel) || "Free (100% Open Access)";
-    const SUPPORT_EMAIL = PM_CFG.supportEmail || "support@nealfrazier.tech";
+    const SUPPORT_EMAIL = PM_CFG.supportEmail || "support@nullai.tech";
     const LS_KEYS = {
       license: "pm_license_v2",
       legacyFlag: "promptmaster_pro_licensed",
@@ -2137,7 +2058,7 @@
       if (badge) {
         badge.innerHTML = '<span style="color: #10B981; font-weight: 700; font-size: 11px;">✦ 100% UNLOCKED</span>';
       }
-      const wrap = document.getElementById("codePaywallWrap");
+      const wrap = document.getElementById("cosolanaTipwallWrap");
       if (wrap) {
         wrap.classList.remove("is-locked", "locked");
       }
@@ -2149,20 +2070,8 @@
       const meterText = document.getElementById("tasteMeterText");
       if (meter && meterText) {
         meter.classList.remove("is-preview");
-        const left = freeRunsLeft();
-        if (isProLicensed) {
-          meter.querySelector(".taste-icon").textContent = "★";
-          meterText.innerHTML = "<strong>Pro active.</strong> Full output, copy and export are unlocked in this browser.";
-        } else if (left > 0) {
-          meter.querySelector(".taste-icon").textContent = "✦";
-          meterText.innerHTML = left === 1
-            ? "<strong>Free taste:</strong> your first optimized prompt is shown in full, copy and export included."
-            : `<strong>Free taste:</strong> ${left} optimized prompts shown in full, copy and export included.`;
-        } else {
-          meter.classList.add("is-preview");
-          meter.querySelector(".taste-icon").textContent = "◐";
-          meterText.innerHTML = `<strong>Preview mode:</strong> new results show the first lines. <button type="button" class="text-btn" data-open-checkout>Unlock everything for ${PRICE_LABEL}</button>`;
-        }
+        meter.querySelector(".taste-icon").textContent = "✦";
+        meterText.innerHTML = "<strong>100% Open Access:</strong> Full output, copy, and export are permanently unlocked in your browser.";
       }
       applyConfigToDom();
     }
@@ -2235,7 +2144,7 @@
     function closePaywallModal() { closeModal("proPaywallModal"); }
     function openLicenseActivationModal() { openRestore(); }
     function closeLicenseModal() { closeModal("licenseModal"); }
-    function openDePayCheckout() { openCheckout({ solana: true }); }
+    function openSolanaTipCheckout() { openCheckout({ solana: true }); }
 
     // ---------- Stripe ----------
     async function verifyStripeSession(sessionId) {
@@ -3399,7 +3308,7 @@
         <div class="pm-pay">
           <a class="cta-primary cta-block" id="stripeCheckoutBtn" href="#" rel="noopener"><span>Pay <span data-price>Free (100% Open Access)</span> with card</span> <span class="arrow" aria-hidden="true">→</span></a>
           <p class="pm-pay-hint" id="stripeHint">Secure checkout by Stripe · Apple Pay & Google Pay where available</p>
-          <p class="pm-unavailable" id="stripeUnavailable" hidden>Card checkout isn't configured yet. Email <a href="mailto:support@nealfrazier.tech" data-support-email>support@nealfrazier.tech</a> and we'll get you set up.</p>
+          <p class="pm-unavailable" id="stripeUnavailable" hidden>Card checkout isn't configured yet. Email <a href="mailto:support@nullai.tech" data-support-email>support@nullai.tech</a> and we'll get you set up.</p>
 
           <button type="button" class="btn-ghost" id="solanaCheckoutBtn" aria-expanded="false" aria-controls="solPanel" hidden><span>◎ Solana Tip (GG2eQb…dXoK) (<span data-sol-amount>19 USDC</span>)</span></button>
 
@@ -3449,7 +3358,7 @@
         </div>
         <p class="pm-msg" id="licenseMsg" aria-live="polite"></p>
         <div class="pm-foot">
-          <span>Lost it? Email <a href="mailto:support@nealfrazier.tech" data-support-email>support@nealfrazier.tech</a> with your receipt.</span>
+          <span>Lost it? Email <a href="mailto:support@nullai.tech" data-support-email>support@nullai.tech</a> with your receipt.</span>
           <button type="button" class="text-btn" data-open-checkout>☕ Buy Us a Coffee</button>
         </div>
       </div>
@@ -3475,5 +3384,6 @@
       </div>
     </div>
   </div>
+  <script src="/assets/sovereign-upgrade.js" defer></script>
 </body>
 </html>
